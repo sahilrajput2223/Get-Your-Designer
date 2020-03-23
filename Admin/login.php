@@ -35,7 +35,7 @@
 								<p class="account-subtitle">Access to our dashboard</p>
 								
 								<!-- Form -->
-								<form action="login_controler.php" method="post">
+								<form action="auth_controler.php" method="post">
 									<div class="form-group">
 										<input class="form-control" type="text" name="username" placeholder="Username">
 									</div>
