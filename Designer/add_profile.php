@@ -1,8 +1,40 @@
-
-<?php  require("header.php") ?>
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Feb 2020 10:57:14 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <title>Doccure - Dashboard</title>
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+		
+		<!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<!-- Fontawesome CSS -->
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		
+		<!-- Feathericon CSS -->
+        <link rel="stylesheet" href="assets/css/feathericon.min.css">
+		
+		<link rel="stylesheet" href="assets/plugins/morris/morris.css">
+		
+		<!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/style.css">
+		
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+    </head>
+    <body>
+	
+		
 <!-- Page Wrapper -->
-        <div class="page-wrapper">
-                <div class="content container-fluid">
+        <div class="container">
+                <div class="content ">
 					
 					<!-- Page Header -->
 					<div class="page-header">
@@ -28,12 +60,7 @@
                                         <h6 class="text-muted">ryantaylor@admin.com</h6>
 										
                                     </div>
-                                    <div class="col-auto profile-image">
-										<a href="#">
-											<img class="rounded-circle" alt="User Image" src="assets/img/profiles/avatar-01.jpg">
-										</a>
-									</div>
-								</div>
+                             	</div>
 							</div>
 						</div>
                     </div>
@@ -72,7 +99,7 @@
                                                 </div>
                                                 
                                                 <div class="form-group">
-													<label>Profile Image: (look above to live preview)</label>
+													<label>Profile Image:</label>
 													<input type="file" class="form-control">
 												</div>
 											
@@ -80,13 +107,19 @@
 											<div class="col-md-6">
 												<h4 class="card-title"><br></h4>
 												<div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-6">
+														<div class="form-group">
+															<label>Username:</label>
+															<input type="text" class="form-control">
+														</div>
+													</div>
+                                                    <div class="col-md-6">
 														<div class="form-group">
 															<label>Birth Date:</label>
 															<input type="date" class="form-control">
 														</div>
 													</div>
-											
+							
                                                     <div class="col-md-6">
 														<div class="form-group">
 															<label>Street:</label>
@@ -144,7 +177,20 @@
 											</div>
 										</div>
 										<div class="text-right">
-											<button type="submit" class="btn btn-primary">Edit</button>
+                                            <div class="row">
+                                                <div class="col-md-2">
+
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button type="submit" style="width: 100%" class="btn btn-primary">Submit</button>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button type="reset" style="width: 100%" class="btn btn-danger">Reset</button>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    
+                                                </div>
+                                            </div>
 										</div>
 									</form>
 								</div>

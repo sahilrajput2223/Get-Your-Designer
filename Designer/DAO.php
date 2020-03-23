@@ -12,7 +12,11 @@
 			$db = new dbconnect();
 			$this->con = $db->connect();
 		}
-
+		
+		function select_all($table)
+		{
+			return mysqli_query($this->con , "SELECT * FROM $table");
+		}
 		
 		function select_by_condition($table,$where="")
 		{
