@@ -40,9 +40,9 @@
                                                 <th>Name</th>
                                                 <th>Username</th>
                                                 <th>Email</th>
-                                                <th>Status</th>
+                                                <th>Profile</th>
                                                 <th>Details</th>
-                                                <th>profile</th>
+                                                <th>Reminder</th>
                                                 <th>Delete</th>
                                             </tr>
                                         </thead>
@@ -60,10 +60,14 @@
 			                        <td><?php echo $result['name']; ?></td>
 			                        <td><?php echo $result['username']; ?></td>
                         			<td><?php echo $result['email']; ?></td>
-			                        <td><?php echo "0" ?></td>
+			                        <td><?php if($result['profile_flag'] == 0){ echo "No"; } else { echo "Yes";} ?></td>
 			                        <td><?php echo "Details" ?></td>
                                     <td><?php echo "profile mail" ?></td>	
-                                    <td><?php echo "delete" ?></td>	
+                                    <td><form method="POST" action="mvc/controller.php"> 
+                                            <input type="hidden" name="designer_id" value="<?php echo $result['id']; ?>">
+                                            <button name="btnDeleteDesigner">Delete</button>
+                                        </form>
+                                    </td>	
                                     </tr>
                                         <?php  } ?>
                                         </tbody>

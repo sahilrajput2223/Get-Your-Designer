@@ -18,6 +18,11 @@
 		{
 			return mysqli_query($this->con , "SELECT * FROM $table");
 		}
+
+		function delete_designer_by_id($table, $where)
+		{
+			return mysqli_query($this->con , "DELETE FROM $table WHERE $where");
+		}
 		
 		function insert($table,$value)
 		{

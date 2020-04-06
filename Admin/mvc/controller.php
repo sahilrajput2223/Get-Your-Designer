@@ -46,6 +46,24 @@
 
 			
 		}
+
+
+
+
+		if (isset($_POST['btnDeleteDesigner'])) {
+				$designer_id = $_POST['designer_id'];
+				$condition = "id = $designer_id";
+				$q = $d->delete_designer_by_id("register_designer", $condition);
+	
+				if ($q > 0) {
+					header("Location:../all_designer.php");
+				}
+				else{
+					echo "something is wrong - Designer Data Not Deleted";
+				}
+
+			
+		}
 		
 	}
 
