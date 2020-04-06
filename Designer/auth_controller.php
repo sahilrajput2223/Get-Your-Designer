@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     require("mvc/DAO.php");
 
     if(isset($_POST) && !empty($_POST)){
@@ -20,7 +20,8 @@
             $result = mysqli_fetch_array($data);
 
             if ($result["email"] == $email){
-                echo "Login Done (Designer)";  
+                echo "Login Done (Designer)"; 
+                $_SESSION['designer'] = $email; 
                 header("Location:home.php");
             }
             else{
@@ -32,6 +33,7 @@
 
         if(isset($_POST['btnLogout'])){
             echo "btn logout";
+            session_destroy();
             header("Location:login.php");
         }
 

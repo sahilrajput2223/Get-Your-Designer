@@ -1,4 +1,10 @@
 <?php 
+
+	session_start();
+
+	if($_SESSION['designer'] == null){
+		header("Location:login.php");
+	}
     include_once("header.php");
 ?>	
 			<!-- Page Wrapper -->
