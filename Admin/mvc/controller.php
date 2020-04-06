@@ -27,13 +27,14 @@
 							'email'=>$m->get_data(test_input('txtEmail')) ,
 							'password'=>$m->get_data(test_input('txtPasswd')) ,
 							'c_password'=>$m->get_data(test_input('txtCPasswd')) ,
+							'profile_flag'=>$m->get_data(test_input(0)) ,
 							);
 	
 					$q = $d->insert("register_designer",$a);
 	
 				if ($q > 0) {
 					#echo "Designer Data Added";
-					header("Location:home.php");
+					header("Location:../home.php");
 				}
 				else{
 					echo "something is wrong - Designer Data Not Added";
