@@ -62,7 +62,11 @@
                         			<td><?php echo $result['email']; ?></td>
 			                        <td><?php if($result['profile_flag'] == 0){ echo "No"; } else { echo "Yes";} ?></td>
 			                        <td><?php echo "Details" ?></td>
-                                    <td><?php echo "profile mail" ?></td>	
+                                    <td><form method="POST" action="mvc/profile_mail.php"> 
+                                            <input type="hidden" name="email" value="<?php echo $result['email']; ?>">
+                                            <button name="Email">Mail</button>
+                                        </form>
+                                    </td>	
                                     <td><form method="POST" action="mvc/controller.php"> 
                                             <input type="hidden" name="designer_id" value="<?php echo $result['id']; ?>">
                                             <button name="btnDeleteDesigner">Delete</button>
