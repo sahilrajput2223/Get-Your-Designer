@@ -46,10 +46,10 @@ if ($_SESSION['admin'] != 'Admin')
                                                 <th>Name</th>
                                                 <th>Username</th>
                                                 <th>Email</th>
-                                                <th>Profile</th>
+                                                <th>Profile <br> Completed</th>
                                                 <th>Details</th>
-                                                <th>Reminder</th>
-                                                <th>Delete</th>
+                                                <th>Profile <br>Reminder</th>
+                                                <th>Profile <br>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody> 
@@ -70,12 +70,12 @@ if ($_SESSION['admin'] != 'Admin')
 			                        <td><?php echo "Details" ?></td>
                                     <td><form method="POST" action="mvc/profile_mail.php"> 
                                             <input type="hidden" name="email" value="<?php echo $result['email']; ?>">
-                                            <button name="Email">Mail</button>
+                                            <button name="Email" class="btn btn-primary" style="width:90%; color:white">Send Mail</button>
                                         </form>
                                     </td>	
                                     <td><form method="POST" action="mvc/controller.php"> 
                                             <input type="hidden" name="designer_id" value="<?php echo $result['id']; ?>">
-                                            <button name="btnDeleteDesigner">Delete</button>
+                                            <button name="btnDeleteDesigner" class="btn btn-danger" style="width: 100%;color:white;">Delete</button>
                                         </form>
                                     </td>	
                                     </tr>
