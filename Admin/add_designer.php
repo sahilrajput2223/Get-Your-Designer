@@ -27,7 +27,7 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <form action="controller.php" method="POST">
+                                <form action="mvc/controller.php" method="POST">
                                     <div class="form-group">
                                         <label>Name</label>
                                         <input type="text" name="D_name" class="form-control">
