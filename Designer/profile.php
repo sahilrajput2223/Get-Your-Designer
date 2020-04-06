@@ -1,5 +1,13 @@
 
-<?php  require("header.php") ?>
+<?php  
+
+session_start();
+
+if($_SESSION['designer'] == null){
+	header("Location:login.php");
+}
+
+require("header.php") ?>
 <!-- Page Wrapper -->
         <div class="page-wrapper">
                 <div class="content container-fluid">
