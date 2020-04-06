@@ -1,6 +1,6 @@
 <?php
 
-
+    session_start();
     if(isset($_POST) && !empty($_POST)){
         
         
@@ -11,6 +11,7 @@
 
             if($username == "Admin" && $password == "Admin"){
                 echo "password match";
+                $_SESSION['admin'] = "Admin";
                 header("Location:home.php");
             }
             else{
@@ -21,6 +22,7 @@
 
         if(isset($_POST['btnLogout'])){
             echo "btn logout";
+            session_destroy();
             header("Location:login.php");
         }
 
