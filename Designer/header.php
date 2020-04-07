@@ -43,7 +43,7 @@
 			
 				<!-- Logo -->
                 <div class="header-left">
-                    <a href="index.html" class="logo">
+                    <a href="index.html"  class="logo">
 						<img src="assets/img/logo.png" style="width: 100%;"  alt="Logo">
 					</a>
 					<a href="index.html"  class="logo logo-small">
@@ -120,4 +120,5 @@
                 </div>
             </div>
 			<!-- /Sidebar -->
+        
 		

@@ -47,6 +47,7 @@ if($_SESSION['designer'] == null){
                                                 <th>Price</th>
                                                 <th>Category</th>
                                                 <th>Occasion</th>
+                                                <th>Uploded Date</th>
                                                 <th>Details</th>
                                                 <th>Delete</th>
                                             </tr>
@@ -57,7 +58,7 @@ if($_SESSION['designer'] == null){
                                         $I = 0;
                                         $email = $_SESSION['designer'];
                                     
-                                        $where = "designer_email = '$email'";
+                                        $where = "designer_email = '$email' ORDER BY created_on DESC";
                                     
                                         $data = $d->select_by_condition("designer_post",$where);
                                         
@@ -70,7 +71,8 @@ if($_SESSION['designer'] == null){
 			                        <td><?php echo $result['material']; ?></td>
                         			<td><?php echo $result['price']; ?></td>
 			                        <td><?php echo $result['category'] ?></td>
-			                        <td><?php echo $result['occasion'] ?></td>
+                                    <td><?php echo $result['occasion'] ?></td>
+                                    <td><?php echo $result['created_on'] ?></td>
                                     <td>
                                         <form method="POST" action="post_details.php"> 
                                             <input type="hidden" name="id" value="<?php echo $result['id']; ?>">

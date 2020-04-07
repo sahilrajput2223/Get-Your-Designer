@@ -164,7 +164,9 @@
                                         <div class="col-md-6">
 												<div class="form-group">
                                                        <br> <label><?php echo "Image" . " " . $temp . " :"?></label>
-                                                        <img style="width:90%; height:90%; border-radius:10px; box-shadow: 10px 10px 20px;" src='<?php echo $imgs[$i] ?>' >
+                                                       <div style="width: 100%; height:250px;">
+													   <img style="width:90%; height:100%; border-radius:10px; box-shadow: 10px 10px 20px;" src='<?php echo $imgs[$i] ?>' >
+													   </div> 
 												</div>
 											</div>                                          
 											            <?php $temp++;} ?>
