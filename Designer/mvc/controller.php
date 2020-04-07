@@ -136,6 +136,150 @@
 				echo "something is wrong - Designer Data Not updated";
 			}			
 	}
+
+
+
+
+
+
+
+
+
+	if (isset($_POST['btnAddPost'])) {
+
+		$email = $_POST['email'];
+		$SIZE = implode(',', $_POST["size"]);
+		$files = array();
+
+		if($_FILES['img1'] != ""){
+			
+			$errors= array();
+			$file_name = $_FILES['img1']['name'];
+			$file_size =$_FILES['img1']['size'];
+			$file_tmp =$_FILES['img1']['tmp_name'];
+			$file_type=$_FILES['img1']['type'];
+			$file_ext=strtolower(end(explode('.',$file_name)));
+			$extensions= array("jpeg","jpg","png");
+
+			$file_path = "../images/post/".$file_name;
+			if(in_array($file_ext,$extensions)=== true){
+				move_uploaded_file($file_tmp,$file_path);
+				echo "Success";
+				array_push($files,$file_path);
+			 } 
+			else{
+				echo "File Type Error";
+			}
+
+		}
+
+		
+		if($_FILES['img2'] != ""){
+			
+			$errors= array();
+			$file_name = $_FILES['img2']['name'];
+			$file_size =$_FILES['img2']['size'];
+			$file_tmp =$_FILES['img2']['tmp_name'];
+			$file_type=$_FILES['img2']['type'];
+			$file_ext=strtolower(end(explode('.',$file_name)));
+			$extensions= array("jpeg","jpg","png");
+
+			$file_path = "../images/post/".$file_name;
+			if(in_array($file_ext,$extensions)=== true){
+				move_uploaded_file($file_tmp,$file_path);
+				echo "Success";
+				array_push($files,$file_path);
+			 } 
+			else{
+				echo "File Type Error";
+			}
+
+		}
+
+		if($_FILES['img3'] != ""){
+			
+			$errors= array();
+			$file_name = $_FILES['img3']['name'];
+			$file_size =$_FILES['img3']['size'];
+			$file_tmp =$_FILES['img3']['tmp_name'];
+			$file_type=$_FILES['img3']['type'];
+			$file_ext=strtolower(end(explode('.',$file_name)));
+			$extensions= array("jpeg","jpg","png");
+
+			$file_path = "../images/post/".$file_name;
+			if(in_array($file_ext,$extensions)=== true){
+				move_uploaded_file($file_tmp,$file_path);
+				echo "Success";
+				array_push($files,$file_path);
+			 } 
+			else{
+				echo "File Type Error";
+			}
+
+		}
+
+		if($_FILES['img4'] != ""){
+			
+			$errors= array();
+			$file_name = $_FILES['img4']['name'];
+			$file_size =$_FILES['img4']['size'];
+			$file_tmp =$_FILES['img4']['tmp_name'];
+			$file_type=$_FILES['img4']['type'];
+			$file_ext=strtolower(end(explode('.',$file_name)));
+			$extensions= array("jpeg","jpg","png");
+
+			$file_path = "../images/post/".$file_name;
+			if(in_array($file_ext,$extensions)=== true){
+				move_uploaded_file($file_tmp,$file_path);
+				echo "Success";
+				array_push($files,$file_path);
+			 } 
+			else{
+				echo "File Type Error";
+			}
+
+		}
+
+
+		$imgs = implode(",",$files);
+		
+		$m->set_data("txtEmail" , $email);
+		$m->set_data("txtDesignName" , $design_name);
+		$m->set_data("txtDesc" , $desc);
+		$m->set_data("txtSize" , $SIZE);
+		$m->set_data("txtPrice" , $price);
+		$m->set_data("txtImages" , $imgs);
+		$m->set_data("txtCategory" , $category);
+		$m->set_data("txtOccasion" , $occasion);
+		$m->set_data("txtMaterial" , $material);
+		
+
+
+		$a = array( 'designer_email'=>$m->get_data(test_input('txtEmail')) ,
+					'design_name'=>$m->get_data(test_input('txtDesignName')) ,
+					'description'=>$m->get_data(test_input('txtDesc')) ,
+					'material'=>$m->get_data(test_input('txtMaterial')) ,
+					'price'=>$m->get_data(test_input('txtPrice')) ,
+					'size'=>$m->get_data(test_input('txtSize')) ,
+					'category'=>$m->get_data(test_input('txtCategory')) ,
+					'occasion'=>$m->get_data(test_input('txtOccasion')) ,
+					'images'=>$m->get_data(test_input('txtImages')) ,
+					);
+			
+			$q = $d->insert("designer_post",$a);
+
+		if ($q > 0) {
+			#echo "post Added";
+			header("Location:../home.php");
+		}
+		else{
+			echo "something is wrong - Designer Post Not Added";
+		}			
+	}
+
+
+
+
 		
 	}
 

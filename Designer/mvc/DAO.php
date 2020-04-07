@@ -21,6 +21,8 @@
 		}
 		
 
+		
+
 
 		function select_by_condition($table,$where="")
 		{
@@ -28,7 +30,7 @@
 			{
 				$where = "where ".$where;
 			}
-			return mysqli_query($this->con , "SELECT * FROM $table WHERE email = 'rajputsahil.2204@gmail.com'");
+			return mysqli_query($this->con , "SELECT * FROM $table $where");
 		}
 		
 
