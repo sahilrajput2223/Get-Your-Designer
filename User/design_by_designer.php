@@ -14,9 +14,13 @@
             <div class="row">
                 <ul class="products clearfix">
                     <!--Product 1-->
-                    
                     <div class="container">
+                    <li col-sm-12 col-md-12 col-xs-12 product> <br>
+                    <br>
+                    <br>
+                    <br>
                     
+                </li>
                    <?php  
                         while ($result = mysqli_fetch_array($data)) {
                            $I++;
@@ -27,7 +31,7 @@
                                 
                     <li class="col-sm-5 col-md-5 col-xs-5 product">
                         
-                        <a href="list_design.php" class="loop-product-link">
+                        <a href="design_details.php?a=<?php echo $result['id']?>" class="loop-product-link">
                             <img style="width:100%; height:400px; border-radius:5px; box-shadow: 10px 10px 15px gray;" src="<?php echo "../Designer/".$imgs[0] ?>" alt="image"/>
                             <img style="width:100%; height:400px; border-radius:5px; box-shadow: 10px 10px 15px gray;" class="image-hover" src="<?php echo "../Designer/".$imgs[1] ?>" alt="image"/>
                             <h3 style="font-size: 20px; "><?php echo $result['design_name'] ?></h3>

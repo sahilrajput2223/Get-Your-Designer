@@ -9,9 +9,17 @@
                 <div class="col-sm-12">
                     <div class="wrap-login-forms other-page margin-top-140">
                         <!--Title-->
-                        <h3 class="page-title">customer login</h3>
+                        <br>
+                        <br>
+                        <br>
+
+                        <br>
+                        <br>
+
+                        <br><h3 class="page-title">login</h3>
                         <!--End Title-->
                         <!--Form-->
+                        
                         <form action="#" class="login-forms">
                             <p class="form-row">
                                 <input type="text" class="input-text required" placeholder="name"/>

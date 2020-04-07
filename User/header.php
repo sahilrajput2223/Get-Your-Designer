@@ -12,22 +12,25 @@
 <html lang="en">
 <!--<![endif]-->
 
-<!-- Mirrored from html.cubecreationthemes.com/lola/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Mar 2020 14:56:48 GMT -->
+<!-- Mirrored from html.cubecreationthemes.com/lola/shop-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Mar 2020 14:59:25 GMT -->
 <head>
-    <title>Get-Your-Designer</title>
+    <title>Lola | HTML Themes</title>
     <meta charset="UTF-8">
     <meta name="author" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
     <!-- Style CSS -->
     <link href="css/bootstrap.css" media="screen" rel="stylesheet">
     <link href="css/font-awesome.css" media="screen" rel="stylesheet">
-    <link href="css/style.css" media="screen" rel="stylesheet">
+    <!-- Selectize -->
+    <link href="css/selectize.css" media="screen" rel="stylesheet">
+    <!-- Style -->
+    <link href="style.css" media="screen" rel="stylesheet">
 </head>
-<body>
+<body class="shop-page shop-page-product-details">
 <!-- Spinner -->
 <div class="spinner-container">
     <div class="spinner-dot"></div>
@@ -43,21 +46,33 @@
         <nav class="menu">
             <ul>
                 <li class="menu-item-has-children">
-                    
-                    <a href="home.php">HOME</a>
-                    
-                </li>
-                <li class="menu-item-has-children">
                     <a href="#" class="menu-icon"></a>
-                    <a href="list_designer.php">DESIGNER</a>
+                    <a href="index-2.html">HOME</a>
+                    <ul class="sub-menu">
+                        <li><a href="index-2.html">HOME SLIDER</a></li>
+                        <li><a href="index-3.html">HOME VIDEO</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children active-item">
+                    <a href="#" class="menu-icon"></a>
+                    <a href="shop.html">SHOP</a>
                     <ul class="sub-menu">
                         <li><a href="shop.html">TWO COLUMNS</a></li>
                         <li><a href="shop-2.html">THREE COLUMNS </a></li>
                     </ul>
                 </li>
-                <li> <a href="aboutus.php">ABOUT US </a></li>
-                <li><a href="contact.php">CONTACT</a></li>
-                <li> <a href="help.php">HELP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li class="menu-item-has-children">
+                    <a href="#" class="menu-icon"></a>
+                    <a href="size-guide.html">HELP</a>
+                    <ul class="sub-menu">
+                        <li><a href="size-guide.html">SIZE GUIDE</a></li>
+                        <li><a href="returns-exchanges.html">RETURNS - EXCHANGES</a></li>
+                        <li><a href="terms-of-services.html">TERMS OF SERVICES</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
         <div class="menu-log-in"><a href="login.html">LOG IN</a></div>
@@ -88,9 +103,10 @@
             </a>
         </div>
         <div class="logo-wrap">
-            <a href="home.php" style="font-size: 35px;" class="theme-logo">Get-Your-Designer</a>
+            <a href="index-2.html" class="theme-logo">Get-Your-Designer</a>
         </div>
         <div class="header-cart">
         </div>
     </header>
     <!-- End Header -->
+   
