@@ -30,7 +30,7 @@
             if ($result["email"] == $email){
                 echo "Login Done (Designer)"; 
                 $_SESSION['designer'] = $email; 
-                header("Location:home.php");
+                header("Location:../home.php");
             }
             else{
                 echo "Login Fail (Designer)";

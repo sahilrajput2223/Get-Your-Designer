@@ -21,7 +21,7 @@
 				$file_ext=strtolower(end(explode('.',$file_name)));
 				$extensions= array("jpeg","jpg","png");
 
-				$file_path = "../images/".$file_name;
+				$file_path = "images/".$file_name;
 				if(in_array($file_ext,$extensions)=== true){
 					move_uploaded_file($file_tmp,$file_path);
 					echo "Success";
@@ -51,8 +51,8 @@
 	
 	
 				$a = array( 'name'=>$m->get_data(test_input('txtName')) ,
-							'username'=>$m->get_data(test_input('txtEmail')) ,
-							'email'=>$m->get_data(test_input('txtUsername')) ,
+							'username'=>$m->get_data(test_input('txtUsername')) ,
+							'email'=>$m->get_data(test_input('txtEmail')) ,
 							'phone'=>$m->get_data(test_input('txtPhone')) ,
 							'gender'=>$m->get_data(test_input('txtGender')) ,
 							'profile_img'=>$m->get_data(test_input('txtImg')) ,
