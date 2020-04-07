@@ -47,7 +47,11 @@ require("header.php");
 							</div>
 							
 							<div class="col-md-2">
-								<button type="reset" style="width: 100%" class="btn btn-primary">Edit Profile</button>  
+								<form action="edit_profile.php" method="POST"> 
+									<input type="hidden" name='email' value="<?php echo $result['email'] ?>" >
+								<button type="submit" style="width: 100%" class="btn btn-primary">Edit Profile</button>  
+								</form>
+								
                             </div>
                     	</div>
 					</div>
@@ -204,7 +208,7 @@ require("header.php");
 										</div>
 											</div>
 										
-										
+									
 									</form>
 								</div>
 							</div>

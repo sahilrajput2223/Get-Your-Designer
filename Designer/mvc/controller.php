@@ -85,6 +85,57 @@
 					echo "something is wrong - Designer Data Not Added";
 				}			
 		}
+
+
+
+
+		if (isset($_POST['btnEditDesigner'])) {
+
+			$email = $_POST['email'];
+		
+			$m->set_data("txtGender" , $gender);
+			$m->set_data("txtStreet" , $street);
+			$m->set_data("txtArea" , $area);
+			$m->set_data("txtCity" , $city);
+			$m->set_data("txtState" , $state);
+			$m->set_data("txtCountry" , $country);
+			$m->set_data("txtPincode" , $pinCode);
+			$m->set_data("txtPhone" , $phone);
+			$m->set_data("txtWebsite" , $website);
+			$m->set_data("txtInstagram" , $instagram);
+			$m->set_data("txtFacebook" , $facebook);
+			$m->set_data("txtTwitter" , $twitter);
+			$m->set_data("txtBlogger" , $blogger);
+			$m->set_data("txtDate" , date("Y-m-d"). " " .date("h:i:s"));
+
+
+			$a = array( 'phone'=>$m->get_data(test_input('txtPhone')) ,
+						'gender'=>$m->get_data(test_input('txtGender')) ,
+						'street'=>$m->get_data(test_input('txtStreet')) ,
+						'area'=>$m->get_data(test_input('txtArea')) ,
+						'city'=>$m->get_data(test_input('txtCity')) ,
+						'state'=>$m->get_data(test_input('txtState')) ,
+						'country'=>$m->get_data(test_input('txtCountry')) ,
+						'pin_code'=>$m->get_data(test_input('txtPincode')) ,
+						'website'=>$m->get_data(test_input('txtWebsite')) ,
+						'instagram'=>$m->get_data(test_input('txtInstagram')) ,
+						'facebook'=>$m->get_data(test_input('txtFacebook')) ,
+						'twitter'=>$m->get_data(test_input('txtTwitter')) ,
+						'blogger'=>$m->get_data(test_input('txtBlogger')) ,
+						'updated_on'=>$m->get_data(test_input('txtDate')) ,
+						);
+				
+				$where = "email = '$email'";
+				$q = $d->update("designer_profile",$a,$where);
+
+			if ($q > 0) {
+				
+				header("Location:../profile.php");
+			}
+			else{
+				echo "something is wrong - Designer Data Not updated";
+			}			
+	}
 		
 	}
 
