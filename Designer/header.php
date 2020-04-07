@@ -1,3 +1,7 @@
+<?php 
+	session_start();
+	
+?>
 <!DOCTYPE html>
 <html lang="en">
     
@@ -40,7 +44,7 @@
 				<!-- Logo -->
                 <div class="header-left">
                     <a href="index.html" class="logo">
-						<img src="assets/img/logo.png" style="width: 90%" alt="Logo">
+						<img src="assets/img/logo.png" style="width: 100%;"  alt="Logo">
 					</a>
 					<a href="index.html"  class="logo logo-small">
 						<img src="assets/img/logo-small.png"  alt="Logo" width="30" height="30">
@@ -81,9 +85,21 @@
 							<li> 
 								<a href="home.php"><i class="fa fa-home"></i> <span>Dashboard</span></a>
 							</li>
+
+							<?php 
+								if($_SESSION['has_profile'] == "yes"){
+							?>
 							<li> 
 								<a href="profile.php"><i class="fa fa-user-circle"></i> <span>Profile</span></a>
 							</li>					
+							<?php 
+								}
+								else{
+							?>
+							<li> 
+								<a href="add_profile.php"><i class="fa fa-user-circle"></i> <span>Add Profile</span></a>
+							</li>					
+							<?php } ?>
 							<li> 
 								<a href="add_post.php"><i class="fa fa-plus"></i> <span>Add Post</span></a>
 							</li>					

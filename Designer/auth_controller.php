@@ -19,6 +19,14 @@
             
             $result = mysqli_fetch_array($data);
 
+            if($result['profile_flag'] == 1){
+                $_SESSION['has_profile'] = "yes";
+            }
+            else{
+                $_SESSION['has_profile'] = "false";
+            }
+
+
             if ($result["email"] == $email){
                 echo "Login Done (Designer)"; 
                 $_SESSION['designer'] = $email; 

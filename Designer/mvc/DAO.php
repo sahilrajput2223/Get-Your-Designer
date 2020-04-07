@@ -13,23 +13,26 @@
 			$this->con = $db->connect();
 		}
 		
+
+
 		function select_all($table)
 		{
 			return mysqli_query($this->con , "SELECT * FROM $table");
 		}
 		
+
+
 		function select_by_condition($table,$where="")
 		{
 			if($where!="")
 			{
 				$where = "where ".$where;
 			}
-
-			#echo $where;
-
-			return mysqli_query($this->con,"SELECT * FROM $table $where");
+			return mysqli_query($this->con , "SELECT * FROM $table $where");
 		}
 		
+
+
 		function insert($table,$value)
 		{
 			$field = "";
@@ -53,6 +56,29 @@
 			}
 
 			return mysqli_query($this->con , "INSERT INTO $table($field) VALUES($val)") or die(mysqli_error($this->con));
+		}
+
+
+		function update($table,$value,$where="")
+		{
+			if($where!="")
+			{
+				$where = "where ".$where;
+			}
+			$val = "";
+			$i=0;
+			foreach ($value as $k => $v) {
+				if($i==0)
+				{
+					$val.=$k."='".$v."'";
+				}
+				else
+				{
+					$val.=",".$k."='".$v."'";
+				}
+				$i++;
+			}
+			return mysqli_query($this->con,"UPDATE $table SET $val $where");
 		}
 	}
 ?>
