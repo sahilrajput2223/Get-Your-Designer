@@ -66,7 +66,7 @@
                                             
 												<div class="form-group">
                                                     <label>Design Name:</label>
-                                                    <input type="text" name="email" value="<?php echo $_SESSION['designer']; ?>"> 
+                                                    <input type="hidden" name="email" value="<?php echo $_SESSION['designer']; ?>"> 
 													<input type="text" name="design_name" class="form-control">
                                                 </div>
                                                 
