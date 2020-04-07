@@ -4,7 +4,7 @@
     $I = 0;
     $d = new DAO(); 
     $email = $_GET['email'];
-    $where = "designer_email = '$email'";
+    $where = "designer_email = '$email' ORDER BY created_on DESC";
     $data = $d->select_by_condition("designer_post", $where);
     
 ?>
