@@ -280,6 +280,22 @@
 
 
 
+	if (isset($_POST['btnDeletePost'])) {
+		$id = $_POST['id'];
+		$condition = "id = $id";
+
+		$q = $d->delete_post("designer_post",$condition);
+
+		if ($q > 0) {
+			header("Location:../all_post.php");
+		}
+		else{
+			echo "something is wrong - Designer Post Not Deleted";
+		}
+
+	
+}
+
 		
 	}
 

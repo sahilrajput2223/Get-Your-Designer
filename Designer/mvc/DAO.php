@@ -33,7 +33,11 @@
 			return mysqli_query($this->con , "SELECT * FROM $table $where");
 		}
 		
-
+		function delete_post($table, $where)
+		{
+			return mysqli_query($this->con , "DELETE FROM $table WHERE $where");
+		}
+		
 
 		function insert($table,$value)
 		{

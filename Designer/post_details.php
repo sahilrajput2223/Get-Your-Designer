@@ -173,25 +173,6 @@
 											</div>
 										
 										
-										
-											<div class="text-right">
-                                            <div class="row">
-												<div class="col-md-12">
-													<br>
-												</div>
-                                                <div class="col-md-2">
-
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <button type="submit" name="btnAddPost" style="width: 100%" class="btn btn-primary">Submit</button>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <button type="reset" style="width: 100%" class="btn btn-danger">Reset</button>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    
-                                                </div>
-                                            </div>
 										</div>
 									
 								</div>

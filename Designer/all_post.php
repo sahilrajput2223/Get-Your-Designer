@@ -77,7 +77,10 @@ if($_SESSION['designer'] == null){
                                             <button class="btn btn-primary"> Details </button>
                                         </form>
                                     </td>	
-                                    <td><?php echo "delete" ?></td>	
+                                    <td><form method="POST" action="mvc/controller.php"> 
+                                            <input type="hidden" name="id" value="<?php echo $result['id']; ?>">
+                                            <button name="btnDeletePost" class="btn btn-danger"> Delete </button>
+                                        </form></td>	
                                     </tr>
                                         <?php  } ?>
                                         </tbody>
