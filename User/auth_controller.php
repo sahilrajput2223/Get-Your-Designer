@@ -34,7 +34,8 @@
                 header("Location:home.php");
             }
             else{
-                echo "Login Fail (Designer)";
+                $_SESSION['error'] = "Email And Password Not Match !!!";
+                header("Location:message.php");
             }
             
         }
@@ -78,8 +79,6 @@
                 echo "password not match";
                 header("Location:registration.php");
             }
-                      
-            
             #echo $condition;
            
         }
@@ -119,6 +118,73 @@
             session_destroy();
             header("Location:login.php");
         }
+
+
+        if(isset($_POST['btnForgotPassword'])){
+           
+            $email = $_POST['email'];
+            $where = "email = '$email'";
+            $q = $d->select_by_condition("user_register",$where);
+            
+            if(count(mysqli_fetch_all($q)) != 0){
+                   $_SESSION['f_key'] = $email;
+                   header("Location:mvc/forgot_password_mail.php");
+            }
+            else{
+                $_SESSION['error'] = "Email ID Not Match !!!"; 
+                header("Location:message.php");
+            }
+
+        }
+
+
+        if(isset($_POST['btnMatchOtp'])){
+            $email = $_SESSION['f_key'];
+            $system_otp = $_SESSION['OTP'];
+            $user_otp = $_POST['otp'];
+ 
+            if($system_otp == $user_otp){
+               header("Location:add_new_password.php");
+            }
+            else{
+               $_SESSION['error'] = "System OTP And User OTP Not Match !!!!";
+               header("Location:message.php");
+               
+            }
+         }
+
+
+         if(isset($_POST['btnSetPassword'])){
+            $email = $_SESSION['f_key'];
+            $password = $_POST['password'];
+            $c_password = $_POST['c_password'];
+ 
+            if($password == $c_password){
+                $m->set_data("txtPassword" , $password);
+				$m->set_data("txtCpassword" , $c_password);
+				
+	
+				$a = array( 'password'=>$m->get_data(test_input('txtPassword')) ,
+							'c_password'=>$m->get_data(test_input('txtCpassword')) ,
+                            );
+                $where = "email = '$email'";      
+                $q = $d->update("user_register",$a,$where);
+
+                if($q > 0){
+                    session_destroy();
+                    header("Location:login.php");
+                }
+                else{
+                    $_SESSION['error'] = "Password Not Updated";
+                    header("Location.message.php");      
+                }
+            }
+            else{
+               $_SESSION['error'] = "System OTP And User OTP Not Match !!!!";
+               header("Location:message.php");
+               
+            }
+         }
 
         
     }
