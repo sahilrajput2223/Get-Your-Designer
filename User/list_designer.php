@@ -31,7 +31,7 @@
                     <li class="col-sm-5 col-md-5 col-xs-5 product">
                         
                         <a href="design_by_designer.php?email=<?php echo $result['email']; ?>" >
-                            <img style="width:100%; height:400px; border-radius:5px; box-shadow: 10px 10px 15px gray;" src="<?php echo "../Designer/".$result['profile_img'] ?>" alt="image"/>
+                            <img style="width:100%; height:400px; border-radius:5px; box-shadow: 10px 10px 15px gray;" src="<?php echo "../Designer/images/".$result['profile_img'] ?>" alt="image"/>
                             <h3 style="font-size: 20px; "><?php echo $result['name'] ?></h3>
                         </a>
                     </li>

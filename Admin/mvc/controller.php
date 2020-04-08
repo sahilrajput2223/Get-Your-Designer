@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 	require 'DAO.php'; 
 	require 'model.php';
 
@@ -14,6 +14,14 @@
 			
 			if( $_POST["passwd"] == $_POST["C_password"]){
 				
+				$email = $_POST['Email'];
+				echo $email;
+				
+				$passwd = $_POST['passwd'];
+				echo $passwd;
+				
+				$_SESSION['designer_user_eamil'] = $email;
+				$_SESSION['designer_user_passwd'] = $passwd;
 				echo "PASSWORD AND CONFIRM PASSWORD MATCH";
 				$m->set_data("txtDname" , $D_name);
 				$m->set_data("txtUname" , $U_name);
@@ -34,7 +42,7 @@
 	
 				if ($q > 0) {
 					#echo "Designer Data Added";
-					header("Location:../home.php");
+					header("Location:profile_mail.php");
 				}
 				else{
 					echo "something is wrong - Designer Data Not Added";

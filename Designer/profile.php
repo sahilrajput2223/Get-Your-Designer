@@ -62,7 +62,7 @@ require("header.php");
 							<div class="profile-header">
 								<div class="row align-items-center">
 									<div class="col-md-2 profile-image">
-											<img class="rounded-circle" style="height:120px; box-shadow: 5px 5px 15px;" alt="User Image" src="<?php echo $result['profile_img']  ?>">
+											<img class="rounded-circle" style="height:120px; box-shadow: 5px 5px 15px;" alt="User Image" src="../Designer/images/<?php echo $result['profile_img']  ?>">
 									</div>
 									<div class="col-md-5 profile-user-info">
 										<h4 class="user-name"><?php echo $result['name']; ?></h4>
@@ -75,29 +75,29 @@ require("header.php");
 									<?php 
 										if($result["website"] != ""){
 									?>
-										<a href=<?php echo $result['website'] ?> > <img style='height:50px; width:50px;' src='assets/img/website.png'></a>
+										<a href=<?php echo $result['website'] ?> > <img style='height:25px; width:25px;' src='assets/img/website.svg'></a>&nbsp;&nbsp;&nbsp;&nbsp;
 									
 									<?php
 										} 
 										if($result["instagram"] != ""){
 									?>
-										<a href='<?php echo $result['website'] ?>' ><img style='height:65px; width:65px;' src='assets/img/instagram.png'></a></a>
+										<a href='<?php echo $result['website'] ?>' ><img style='height:25px; width:25px;' src='assets/img/instagram.svg'></a></a>&nbsp;&nbsp;&nbsp;&nbsp;
 									
 									<?php
 										} 
 										if($result["twitter"] != ""){
 									?>
-										<a href=<?php echo $result['twitter'] ?> > <img style='height:60px; width:60px;' src='assets/img/twitter.png'></a>
+										<a href=<?php echo $result['twitter'] ?> > <img style='height:25px; width:25px;' src='assets/img/twitter.svg'></a>&nbsp;&nbsp;&nbsp;&nbsp;
 									<?php
 										} 
 										if($result["facebook"] != ""){
 									?>
-										<a href=<?php echo $result['facebook'] ?> > <img style='height:65px; width:65px;' src='assets/img/facebook.png'></a>
+										<a href=<?php echo $result['facebook'] ?> > <img style='height:25px; width:25px;' src='assets/img/facebook.svg'></a>&nbsp;&nbsp;&nbsp;&nbsp;
 										<?php
 										} 
 										if($result["blogger"] != ""){
 									?>
-										<a href=<?php echo $result['blogger'] ?> > <img style='height:60px; width:60px;' src='assets/img/blogger.png'></a>
+										<a href=<?php echo $result['blogger'] ?> > <img style='height:25px; width:25px;' src='assets/img/blogger.svg'></a>&nbsp;&nbsp;&nbsp;&nbsp;
 										<?php } ?>
 
 									</div>
@@ -141,7 +141,7 @@ require("header.php");
 													<div class="col-md-11">
 														<div class="form-group">
 														<label>Gender:</label>
-															<select name="gender" class="form-control">
+															<select disabled name="gender" class="form-control">
 																<option>Select Gender</option>
 																<option <?php if($result['gender'] == "Male"){ echo "selected"; } ?> value="Male">Male</option>
 																<option <?php if($result['gender'] == "Female"){ echo "selected"; } ?> value="Female">Female</option>

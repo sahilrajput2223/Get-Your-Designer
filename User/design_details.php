@@ -142,7 +142,7 @@
                        ?>
                         
                       <div  style="width:100%; height:600%;" class="item <?php if($i == 0){ echo "active";} ?>">
-                           <img  src="<?php echo '../Designer/'.$imgs[$i] ?>" style="width: 100%; height:600px; margin-top:20%;" alt="Product details slide 1"/>
+                           <img  src="<?php echo '../Designer/images/post/'.$imgs[$i] ?>" style="width: 100%; height:600px; margin-top:20%;" alt="Product details slide 1"/>
                        </div>
                         
                        <?php } ?>

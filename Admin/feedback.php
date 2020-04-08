@@ -19,7 +19,7 @@ if ($_SESSION['admin'] != 'Admin')
                 <div class="page-header">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="page-title">Welcome Admin!</h3>
+                            <h3 class="page-title">Feedback</h3>
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item active">Dashboard</li>
                                 <li class="breadcrumb-item active">All Feedback</li>
@@ -43,33 +43,26 @@ if ($_SESSION['admin'] != 'Admin')
                                         <thead>
                                             <tr>
                                                 <th>No.</th>
-                                                <th>Name</th>
-                                                <th>Username</th>
                                                 <th>Email</th>
-                                                <th>Status</th>
-                                                <th>Details</th>
-                                                <th>profile</th>
-                                                <th>Delete</th>
+                                                <th>Feedback</th>
+                                                <th>Submitted On</th>
                                             </tr>
                                         </thead>
                                         <tbody> 
                                     <?php
                                         $d = new DAO(); 
                                         $I = 0;
-                                        $data = $d->select_all("register_designer");
+                                        $data = $d->select_all("feedback");
                                         
                                         while ($result = mysqli_fetch_array($data)) {
 					                        $I++;
 							        ?>
                                     <tr>
                                     <td><?php echo $I; ?></td>
-			                        <td><?php echo $result['name']; ?></td>
-			                        <td><?php echo $result['username']; ?></td>
-                        			<td><?php echo $result['email']; ?></td>
-			                        <td><?php echo "0" ?></td>
-			                        <td><?php echo "Details" ?></td>
-                                    <td><?php echo "profile mail" ?></td>	
-                                    <td><?php echo "delete" ?></td>	
+			                        <td><?php echo $result['email']; ?></td>
+			                        <td><?php echo $result['feedback']; ?></td>
+                        			<td><?php echo $result['created_on']; ?></td>
+			                        
                                     </tr>
                                         <?php  } ?>
                                         </tbody>

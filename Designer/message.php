@@ -1,3 +1,5 @@
+<?php  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
     
@@ -31,25 +33,14 @@
                         </div>
                         <div class="login-right">
 							<div class="login-right-wrap">
-								<h1>Login</h1>
-								<p class="account-subtitle">Access to our dashboard</p>
-								
-								<!-- Form -->
-								<form action="auth_controller.php" method="post">
-									<div class="form-group">
-										<input class="form-control" required type="text" name="email" placeholder="Email">
+                                <h1>ERROR !! </h1>
+                                    <br>
+								    <div class="form-group">
+                                    <p class="account-subtitle"> <?php echo $_SESSION['error']; session_destroy(); ?> </p>
 									</div>
 									<div class="form-group">
-										<input class="form-control" required type="password" name="password" placeholder="Password">
+                                    <p class="account-subtitle">Please Go Back To <a href="login.php">Login </a>...</p>
 									</div>
-									<div class="form-group">
-										<button class="btn btn-primary btn-block" name="btnLogin" type="submit">Login</button>
-									</div>
-								</form>
-								<!-- /Form -->
-								<br>
-								<br>
-								<p class="account-subtitle">If You Forgot Your Password,<a href="mailto:rajputsahil.2204@gmail.com">Contact Admin</a></p>
 								
 								
 							</div>

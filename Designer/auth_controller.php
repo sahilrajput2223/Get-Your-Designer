@@ -20,6 +20,8 @@
             
             $result = mysqli_fetch_array($data);
 
+            if(count($result) > 0){
+
             if($result['profile_flag'] == 1){
                 $_SESSION['has_profile'] = "yes";
             }
@@ -31,11 +33,23 @@
             if ($result["email"] == $email){
                 echo "Login Done (Designer)"; 
                 $_SESSION['designer'] = $email; 
-                header("Location:home.php");
+                if($_SESSION['has_profile'] == "yes"){
+                    header("Location:profile.php");
+                }
+                else{
+                    header("Location:add_profile.php");
+                }
             }
             else{
-                echo "Login Fail (Designer)";
+                
+            $_SESSION['error'] = "Email Id And Password Not Match !!";
+            header("Location:message.php");
             }
+        }
+        else{
+            $_SESSION['error'] = "Your Email Not Associated With Any User";
+            header("Location:message.php");
+        }
             
         }
 

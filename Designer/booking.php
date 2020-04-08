@@ -1,7 +1,8 @@
-<?php 
+<?php
+
 session_start();
-if ($_SESSION['admin'] != 'Admin')
-{
+
+if($_SESSION['designer'] == null){
     header("Location:login.php");
 }
 
@@ -19,10 +20,10 @@ if ($_SESSION['admin'] != 'Admin')
                 <div class="page-header">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="page-title">User</h3>
+                            <h3 class="page-title">Booking</h3>
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item active">Dashboard</li>
-                                <li class="breadcrumb-item active">All User</li>
+                                <li class="breadcrumb-item active">All Bookings</li>
                             </ul>
                         </div>
                     </div>
@@ -35,7 +36,7 @@ if ($_SESSION['admin'] != 'Admin')
                         <!-- Recent Orders -->
                         <div class="card card-table">
                             <div class="card-header">
-                                <h4 class="card-title">User List</h4>
+                                <h4 class="card-title">Booking List</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -43,33 +44,31 @@ if ($_SESSION['admin'] != 'Admin')
                                         <thead>
                                             <tr>
                                                 <th>No.</th>
-                                                <th>Name</th>
-                                                <th>Username</th>
-                                                <th>Email</th>
-                                                <th>Status</th>
-                                                <th>Details</th>
-                                                <th>profile</th>
-                                                <th>Delete</th>
+                                                <th>User</th>
+                                                <th>Design Name</th>
+                                                <th>Size</th>
+                                                <th>Price</th>
+                                                <th>Booking Date</th>                                                
                                             </tr>
                                         </thead>
                                         <tbody> 
                                     <?php
                                         $d = new DAO(); 
                                         $I = 0;
-                                        $data = $d->select_all("register_designer");
+                                        $email = $_SESSION['designer'];
+                                        $where = "designer_email = '$email'";
+                                        $data = $d->select_by_condition("booking_design", $where);
                                         
-                                        while ($result = mysqli_fetch_array($data)) {
+                                        while ($result = mysqli_fetch_assoc($data)) {
 					                        $I++;
 							        ?>
                                     <tr>
                                     <td><?php echo $I; ?></td>
-			                        <td><?php echo $result['name']; ?></td>
-			                        <td><?php echo $result['username']; ?></td>
-                        			<td><?php echo $result['email']; ?></td>
-			                        <td><?php echo "0" ?></td>
-			                        <td><?php echo "Details" ?></td>
-                                    <td><?php echo "profile mail" ?></td>	
-                                    <td><?php echo "delete" ?></td>	
+			                        <td><?php echo $result['user_email']; ?></td>
+			                        <td><?php echo $result['design_name']; ?></td>
+                        			<td><?php echo $result['size']; ?></td>
+			                        <td><?php echo $result['price']; ?></td>
+			                        <td><?php echo $result['booking_date']; ?></td>
                                     </tr>
                                         <?php  } ?>
                                         </tbody>

@@ -165,7 +165,7 @@
 												<div class="form-group">
                                                        <br> <label><?php echo "Image" . " " . $temp . " :"?></label>
                                                        <div style="width: 100%; height:250px;">
-													   <img style="width:90%; height:100%; border-radius:10px; box-shadow: 10px 10px 20px;" src='<?php echo $imgs[$i] ?>' >
+													   <img style="width:90%; height:100%; border-radius:10px; box-shadow: 10px 10px 20px;" src='../Designer/images/post/<?php echo $imgs[$i] ?>' >
 													   </div> 
 												</div>
 											</div>                                          

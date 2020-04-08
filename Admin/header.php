@@ -79,10 +79,7 @@
 					<div id="sidebar-menu" class="sidebar-menu">
 						<ul>
 							<li> 
-								<a href="home.php"><i class="fe fe-home"></i> <span>Dashboard</span></a>
-							</li>
-							<li> 
-								<a href="add_designer.php"><i class="fe fe-user"></i> <span>Add Designers</span></a>
+								<a href="add_designer.php"><i class="fe fe-user-plus"></i> <span>Add Designers</span></a>
 							</li>
 							<li> 
 								<a href="all_designer.php"><i class="fe fe-layout"></i> <span>All Designers</span></a>
@@ -91,13 +88,13 @@
 								<a href="all_user.php"><i class="fe fe-users"></i> <span>All Users</span></a>
 							</li>
 							<li> 
-								<a href="feedback.php"><i class="fe fe-user-plus"></i> <span>Feedback</span></a>
+								<a href="feedback.php"><i class="fa fa-clipboard"></i> <span>Feedback</span></a>
 							</li>
 							<li> 
 								<a href="contact.php"><i class="fe fe-user"></i> <span>contact</span></a>
 							</li>
 							<li> 
-								<a href="logout.php"><i class="fe fe-user"></i> <span>Logout</span></a>
+								<a href="logout.php"><i class="fa fa-sign-out"></i> <span>Logout</span></a>
 							</li>
 						</ul>
 					</div>

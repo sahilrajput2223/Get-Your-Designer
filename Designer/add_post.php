@@ -67,13 +67,13 @@
 												<div class="form-group">
                                                     <label>Design Name:</label>
                                                     <input type="hidden" name="email" value="<?php echo $_SESSION['designer']; ?>"> 
-													<input type="text" name="design_name" class="form-control">
+													<input type="text" required name="design_name" class="form-control">
                                                 </div>
                                                 
                                                 <div class="form-group">
                                                     <br>
 													<label>Design Description:</label>
-													<textarea rows="9" name="desc" class="form-control"></textarea>
+													<textarea rows="9" name="desc" required class="form-control"></textarea>
 												</div>
 												
 											</div>
@@ -101,17 +101,17 @@
                                                         <br>
 														<div class="form-group">
 															<label>Price: </label>
-															<input type="text" name="price" class="form-control" >
+															<input type="text" required name="price" class="form-control" >
 														</div>
 													</div>
                                                 
                                                     
                                                     <div class="col-md-6">
 														
-														<div class="form-group">
+														<div  class="form-group">
 															<label>Category: </label>
-															<select name="category" class="form-control">
-                                                                <option> -- Select --</option>
+															<select required name="category" class="form-control">
+                                                                <option value=""> -- Select --</option>
                                                                 <option value="Traditional"> Traditional </option>
                                                                 <option value="Formal"> Formal </option>
                                                                 <option value="Casual"> Casual </option>
@@ -130,8 +130,8 @@
 														
 														<div class="form-group">
 															<label>Occasion: </label>
-															<select name="occasion" class="form-control">
-                                                                <option> -- Select --</option>
+															<select required name="occasion" class="form-control">
+                                                                <option value=""> -- Select --</option>
                                                                 <option value="Wedding"> Wedding </option>
                                                                 <option value="Sangeet"> Sangeet </option>
                                                                 <option value="Party"> Party </option>
@@ -151,7 +151,7 @@
 														<div class="form-group">
                                                             <br>
                                                             <label>Material: </label>
-                                                            <input type="text" name="material" class="form-control">
+                                                            <input required type="text" name="material" class="form-control">
 														</div>
                                                     </div>
                                                     
@@ -173,13 +173,13 @@
 											<div class="col-md-6">
 												<div class="form-group">
                                                         <label>Image1 *:</label>
-														<input type="file" name="img1"  class="form-control">
+														<input required type="file" name="img1"  class="form-control">
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
                                                         <label>Image2 *:</label>
-														<input type="file" name="img2" class="form-control">
+														<input required type="file" name="img2" class="form-control">
 												</div>
 												</div>
 											<div class="col-md-6">

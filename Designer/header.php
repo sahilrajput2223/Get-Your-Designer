@@ -42,9 +42,9 @@
             <div class="header">
 			
 				<!-- Logo -->
-                <div class="header-left">
-                    <a href="index.html"  class="logo">
-						<img src="assets/img/logo.png" style="width: 100%;"  alt="Logo">
+                <div  class="header-left">
+                    <a href="index.html"  style="width: 240px;" class="logo">
+						<img src="assets/img/logo.png" style="width: 90%;"  alt="Logo">
 					</a>
 					<a href="index.html"  class="logo logo-small">
 						<img src="assets/img/logo-small.png"  alt="Logo" width="30" height="30">
@@ -82,10 +82,7 @@
                 <div class="sidebar-inner slimscroll">
 					<div id="sidebar-menu" class="sidebar-menu">
 						<ul>
-							<li> 
-								<a href="home.php"><i class="fa fa-home"></i> <span>Dashboard</span></a>
-							</li>
-
+							
 							<?php 
 								if($_SESSION['has_profile'] == "yes"){
 							?>
@@ -107,10 +104,7 @@
 								<a href="all_post.php"><i class="fa fa-clipboard"></i> <span>All Post</span></a>
 							</li>
 							<li> 
-								<a href="feedback.php"><i class="fa fa-comments"></i> <span>Feedback</span></a>
-							</li>
-							<li> 
-								<a href="contact.php"><i class="fa fa-envelope"></i> <span>contact</span></a>
+								<a href="booking.php"><i class="fa fa-envelope"></i> <span>All Booking</span></a>
 							</li>
 							<li> 
 								<a href="logout.php"><i class="fa fa-sign-out"></i> <span>Logout</span></a>

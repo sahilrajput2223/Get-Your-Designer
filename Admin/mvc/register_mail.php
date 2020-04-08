@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 // Import PHPMailer classes into the global namespace
 // These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -12,8 +12,7 @@ require 'PHPMailer/src/SMTP.php';
 
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
-$email = $_SESSION['designer_user_eamil'];
-$passwd = $_SESSION['designer_user_passwd'];
+$email = $_POST['email'];
 try {
     //Server settings
     $mail->isSMTP();                                            // Send using SMTP
@@ -25,7 +24,7 @@ try {
     $mail->Port       = 587;                                    // TCP port to connect to
     
     //Recipients
-    $mail->setFrom('sahilrajput6899@gmail.com', 'Account');
+    $mail->setFrom('sahilrajput6899@gmail.com', 'Profile');
     $mail->addAddress($email);     // Add a recipient
     $mail->addReplyTo('no-reply@gmail.com', 'No Reply');
     
@@ -33,11 +32,10 @@ try {
     #$url = "http://" . $_SERVER["HTTP_HOST"] . dirname($_SERVER["PHP_SELF"]) . "/resetpassword.php?code=$code";
     #$url1 = "http://" . $_SERVER["HTTP_HOST"] . "/dao1/login.php";
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Account Creation';
-    $mail->Body    = "<p> Your User_ID: <b>$email</b>, And Your Password is: <b>$passwd</b> </p>";
+    $mail->Subject = 'Profile Complection';
+    $mail->Body    = "<h1> Please Complete Your Profile </h1>";
     #$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-    unset($_SESSION['designer_user_eamil']);
-    unset($_SESSION['designer_user_passwd']);
+    
     $mail->send();
 
     echo "Mail Send";
