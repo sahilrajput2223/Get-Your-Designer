@@ -119,7 +119,7 @@
             </a>
         </div>
         <div class="logo-wrap">
-            <a href="index-2.html" class="theme-logo">Get-Your_Designer</a>
+            <a href="index-2.html" class="theme-logo">Get-Your-Designer</a>
         </div>
         <div class="header-cart">
             <a href="#" class="cart-link">

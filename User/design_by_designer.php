@@ -6,6 +6,8 @@
     $email = $_GET['email'];
     $where = "designer_email = '$email' ORDER BY created_on DESC";
     $data = $d->select_by_condition("designer_post", $where);
+    $where2 = "email = '$email'";
+    $data2 = $d->select_by_condition("designer_profile", $where2);
     
 ?>
 
@@ -16,16 +18,51 @@
                     <!--Product 1-->
                     <div class="container">
                     <li class="col-sm-12 col-md-12 col-xs-12 product">
-                        <h3 style="font-size: 15px; margin-top: -10%;">Design By: <?php echo $email ?> </h3>
+                    <?php     while ($result2 = mysqli_fetch_array($data2)) {
+                    ?>    
+                    <h3 style="font-size: 15px; margin-top: -10%;">Design By: <?php echo $result2['name'] ?> </h3>
+                        <h3 style="font-size: 15px;">Social Media: 
+                       <?php 
+                        if($result2['website'] != ""){
+                       ?>
+                        <a href="<?php echo $result2['website']?>"><img style="width:20px; height: 20px;" src="images/website.svg" ></a>&nbsp;&nbsp;&nbsp;
+                        <?php } ?>
+
+                        <?php 
+                        if($result2['instagram'] != ""){
+                       ?>
+                        <a href="<?php echo $result2['instagram']?>"><img style="width:20px; height: 20px;" src="images/instagram.svg" ></a> &nbsp;&nbsp;&nbsp;
+                        <?php } ?>
+
+                        <?php 
+                        if($result2['twitter'] != ""){
+                       ?>
+                        <a href="<?php echo $result2['twitter']?>"><img style="width:20px; height: 20px;" src="images/twitter.svg" ></a>&nbsp;&nbsp;&nbsp;
+                        <?php } ?>
+
+                        <?php 
+                        if($result2['blogger'] != ""){
+                       ?>
+                        <a href="<?php echo $result2['blogger']?>"><img style="width:20px; height: 20px;" src="images/blogger.svg" ></a>&nbsp;&nbsp;&nbsp;
+                        <?php } ?>
+
+                        <?php 
+                        if($result2['facebook'] != ""){
+                       ?>
+                        <a href="<?php echo $result2['facebook']?>"><img style="width:20px; height: 20px;" src="images/facebook.svg" ></a>&nbsp;&nbsp;&nbsp;
+                        <?php } ?>
+                    </h3> 
+                        <?php } ?>
                     </li>
-                    <li col-sm-12 col-md-12 col-xs-12 product> <br>
-                    
-                </li>
                    <?php  
                         while ($result = mysqli_fetch_array($data)) {
                            $I++;
                             $imgs = explode(",", $result['images']); 
+                            if($I == 1){
                    ?>
+                    <li class="col-sm-12 col-md-12 col-xs-12 product">   
+                    </li>
+                    <?php }?>
                     <li class="col-sm-1 col-md-1 col-xs-1 product">
                     </li>
                                 

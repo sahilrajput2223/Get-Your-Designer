@@ -9,11 +9,6 @@
                 <div class="col-sm-12">
                     <div class="wrap-account-forms other-page margin-top-140">
                         <!--Title-->
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
                         <h3 class="page-title">create account</h3>
                         <!--End Title-->
                         <!--Form-->

@@ -266,7 +266,7 @@
                                     <a href="#">FREE SHIPPING ON ORDERS 70USD+</a>
                                 </p>
                                 <p class="link-for-size-guide">
-                                    <a href="size-guide.html">size guide</a>
+                                    <a href="size-guide.php">size guide</a>
                                 </p>
                             </div>
                         </div>
