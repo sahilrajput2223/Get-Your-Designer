@@ -49,6 +49,39 @@
 		
 		}
 
+
+
+
+
+
+		if (isset($_POST['btnSubmitFeedback'])) {
+
+			
+			$m->set_data("txtEmail" , $email);
+			$m->set_data("txtFeedback" , $feedback);
+			$m->set_data("txtType" , "user");
+
+
+			$a = array( 'email'=>$m->get_data(test_input('txtEmail')) ,
+						'type'=>$m->get_data(test_input('txtType')) ,
+						'feedback'=>$m->get_data(test_input('txtFeedback')) ,
+						);
+				
+				
+				$q = $d->insert("feedback",$a);
+
+			if ($q > 0) {
+				echo "All Booking";
+				header("Location:../home.php");
+			}
+			else{
+				echo "something is wrong - Feedback Not Added";
+			}
+		
+		}
+
+
+
 }
 
 ?>
