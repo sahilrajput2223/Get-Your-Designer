@@ -120,22 +120,28 @@
                                     <label style="font-size: 15px;">
                                     Size Available *
                                     </label>
-                                    <select name="select-size" class="select-size form-control" id="select-size">
+                                   <form method="POST" action="mvc/controller.php">
+                                    <input type="hidden" name="price" value="<?php echo $result['price']?>">
+                                    <input type="hidden" name="design_id" value="<?php echo $result['id']?>">
+                                    <input type="hidden" name="design_name" value="<?php echo $result['design_name']?>">
+                                    <input type="hidden" name="designer_email" value="<?php echo $result['designer_email']?>">
+                                    <select name="size" class="select-size form-control" id="select-size">
                                         <option> -- Select -- </option>
                                         <?php 
                                             for($i = 0 ; $i < count($size) ; $i++){
                                        
-                                            echo "<option value='$size[i]'> ". $size[$i] ." </option>";
+                                            echo "<option value='$size[$i]'> ". $size[$i] ." </option>";
                                        } ?>
                                     </select>
 
                                 </div>
                                 <br>
                                 <br>
-
+                                
                                 <p class="button">
-                                    <input type="submit" class="button" value="Book Order"/>
+                                    <input type="submit" name="btnBookDesign" class="button" value="Book Order"/>
                                 </p>
+                                </form>
                                 <p class="free-shipping">
                                     <a href="#">FREE SHIPPING ON ORDERS 70USD+</a>
                                 </p>
