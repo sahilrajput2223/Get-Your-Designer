@@ -49,6 +49,10 @@
             $passwd = $_POST["password"];
             $c_passwd = $_POST["c_password"];
 
+
+            $condition = "email = '$email'";
+            $b = $d->select_by_condition("user_register",$where);
+            if(count(mysqli_fetch_assoc($b)) == 0){
             if($passwd == $c_passwd){
 
                 
@@ -76,10 +80,16 @@
     
             }
             else{
-                echo "password not match";
-                header("Location:registration.php");
+                $_SESSION['error'] = "Password And Confirm Password Not Match";
+                header("Location:message.php");
             }
             #echo $condition;
+        }
+        else{
+            $_SESSION['error'] = "Email Already Exists, please Login ";
+            header("Location:message.php");
+        
+        }
            
         }
 

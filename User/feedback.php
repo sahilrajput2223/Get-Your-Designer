@@ -23,9 +23,9 @@ if(empty($_SESSION['user'])){
                                 <label>Email *</label>
                                 <input type="email" name="email" value="<?php echo $_SESSION['user']?>" readonly class="input-text required"/>
                             </p>
-                            <p class="form-row">
+                            <p >
                                 <label>Feedback *</label>
-                                <textarea name="feedback" class="input-text required"> 
+                                <textarea name="feedback"> 
 
                                 </textarea>    
                             </p>

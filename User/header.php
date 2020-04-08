@@ -1,5 +1,9 @@
 <?php 
     session_start();
+    if(empty($_SESSION['user'])){
+        header("Location:login.php");
+    } 
+    
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 8 ]>
@@ -17,12 +21,12 @@
 
 <!-- Mirrored from html.cubecreationthemes.com/lola/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Mar 2020 14:58:36 GMT -->
 <head>
-<title>Lola | HTML Themes</title>
+<title>Get-Your-Designer</title>
     <meta charset="UTF-8">
     <meta name="author" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Style CSS -->
@@ -127,4 +131,3 @@
         </div>
     </header>
     <!-- End Header -->
-    
