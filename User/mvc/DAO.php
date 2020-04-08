@@ -19,6 +19,12 @@
 		{
 			return mysqli_query($this->con , "SELECT * FROM $table");
 		}
+
+
+		function select_all_post($table)
+		{
+			return mysqli_query($this->con , "SELECT * FROM $table ORDER BY created_on DESC");
+		}
 		
 
 		

@@ -58,7 +58,7 @@
                     <a href="#">Design</a>
                     <ul class="sub-menu">
                         <li><a href="list_designer.php">All Designer</a></li>
-                        <li><a href="shop-2.html">All Design</a></li>
+                        <li><a href="list_design.php">All Design</a></li>
                     </ul>
                 </li>
                 <li><a href="my_bookings.php">MY BOOKINGS</a></li>

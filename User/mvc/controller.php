@@ -81,6 +81,32 @@
 		}
 
 
+		if (isset($_POST['btnContact'])) {
+
+			
+			$m->set_data("txtEmail" , $email);
+			$m->set_data("txtName" , $username);
+			$m->set_data("txtContact" , $contact);
+
+
+			$a = array( 'email'=>$m->get_data(test_input('txtEmail')) ,
+						'username'=>$m->get_data(test_input('txtName')) ,
+						'contact'=>$m->get_data(test_input('txtContact')) ,
+						);
+				
+				
+				$q = $d->insert("contact",$a);
+
+			if ($q > 0) {
+				echo "All Booking";
+				header("Location:../home.php");
+			}
+			else{
+				echo "something is wrong - Feedback Not Added";
+			}
+		
+		}
+
 
 }
 
