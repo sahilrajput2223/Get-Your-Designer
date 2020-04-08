@@ -15,7 +15,9 @@
                     <!--Product 1-->
                     
                     <div class="container">
-                            
+                    <li class="col-sm-12 col-md-12 col-xs-12 product">
+                        <h3 style="font-size: 20px; margin-top: -5%;">My Bookings</h3>
+                    </li>      
                     <li class="col-sm-12 col-md-12 col-xs-12 product">
                     <div class="table-responsive">
                                     <table class="table table-hover table-center mb-0">

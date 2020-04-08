@@ -15,6 +15,10 @@
                     <!--Product 1-->
                     
                     <div class="container">
+                    <li class="col-sm-12 col-md-12 col-xs-12 product">
+                        <h3 style="font-size: 30px; margin-top: -10%;">All Designers</h3>
+                    </li>
+                   
                    <?php  
                         while ($result = mysqli_fetch_array($data)) {
                             

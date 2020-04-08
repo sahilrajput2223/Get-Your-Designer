@@ -15,6 +15,9 @@
                 <ul class="products clearfix">
                     <!--Product 1-->
                     <div class="container">
+                    <li class="col-sm-12 col-md-12 col-xs-12 product">
+                        <h3 style="font-size: 15px; margin-top: -10%;">Design By: <?php echo $email ?> </h3>
+                    </li>
                     <li col-sm-12 col-md-12 col-xs-12 product> <br>
                     
                 </li>
