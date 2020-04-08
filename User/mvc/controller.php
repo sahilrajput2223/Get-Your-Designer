@@ -93,6 +93,7 @@
 
 			$email = $_SESSION['user'];
 		
+			$m->set_data("txtPrice" , $price);
 			$m->set_data("txtEmail" , $email);
 			$m->set_data("txtDesign_id" , $design_id);
 			$m->set_data("txtDesignName" , $design_name);
@@ -103,6 +104,7 @@
 			$a = array( 'user_email'=>$m->get_data(test_input('txtEmail')) ,
 						'design_id'=>$m->get_data(test_input('txtDesign_id')) ,
 						'design_name'=>$m->get_data(test_input('txtDesignName')) ,
+						'price'=>$m->get_data(test_input('txtPrice')) ,
 						'designer_email'=>$m->get_data(test_input('txtDesingerEmail')) ,
 						'size'=>$m->get_data(test_input('txtSize')) ,
 						);
@@ -112,7 +114,7 @@
 
 			if ($q > 0) {
 				echo "All Booking";
-				#header("Location:../profile.php");
+				header("Location:../my_bookings.php");
 			}
 			else{
 				echo "something is wrong - Design Booking Not Working";
