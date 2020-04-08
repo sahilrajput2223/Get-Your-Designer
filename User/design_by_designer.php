@@ -16,9 +16,6 @@
                     <!--Product 1-->
                     <div class="container">
                     <li col-sm-12 col-md-12 col-xs-12 product> <br>
-                    <br>
-                    <br>
-                    <br>
                     
                 </li>
                    <?php  

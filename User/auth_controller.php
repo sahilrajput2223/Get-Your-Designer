@@ -12,6 +12,36 @@
     if(isset($_POST) && !empty($_POST)){
         
         
+         
+        if(isset($_POST['btnLoginUser'])){
+            
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+            
+            $condition = "email = '" . $email . "' AND password = '" . $password . "'";
+            echo $condition;
+            
+            #echo $condition;
+            $d = new dao();
+
+            $data = $d->select_by_condition("user_register", $condition);
+            
+            $result = mysqli_fetch_array($data);
+
+            if ($result["email"] == $email && $result['password'] == $password){
+                echo "Login Done (Designer)"; 
+                $_SESSION['user'] = $email; 
+                header("Location:home.php");
+            }
+            else{
+                echo "Login Fail (Designer)";
+            }
+            
+        }
+
+
+
+
         if(isset($_POST['btnRegisterUser'])){
             $username = $_POST['username'];
             $email = $_POST["email"];
@@ -84,7 +114,7 @@
 
 
 
-        if(isset($_POST['btnLogout'])){
+        if(isset($_POST['btnLogoutUser'])){
             echo "btn logout";
             session_destroy();
             header("Location:login.php");

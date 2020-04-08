@@ -15,14 +15,7 @@
                     <!--Product 1-->
                     
                     <div class="container">
-                                
-                    <li class="col-sm-12 col-md-12 col-xs-12 product">
-                        <br>
-                        <br>
-                        <br>
-
-                    </li>
-
+                            
                     <li class="col-sm-12 col-md-12 col-xs-12 product">
                     <div class="table-responsive">
                                     <table class="table table-hover table-center mb-0">

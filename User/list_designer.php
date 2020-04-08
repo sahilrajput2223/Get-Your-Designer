@@ -15,11 +15,6 @@
                     <!--Product 1-->
                     
                     <div class="container">
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
                    <?php  
                         while ($result = mysqli_fetch_array($data)) {
                             

@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <!--[if lt IE 8 ]>
 <html lang="en" class="ie7">
@@ -12,9 +15,9 @@
 <html lang="en">
 <!--<![endif]-->
 
-<!-- Mirrored from html.cubecreationthemes.com/lola/shop-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Mar 2020 14:59:25 GMT -->
+<!-- Mirrored from html.cubecreationthemes.com/lola/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Mar 2020 14:58:36 GMT -->
 <head>
-    <title>Lola | HTML Themes</title>
+<title>Lola | HTML Themes</title>
     <meta charset="UTF-8">
     <meta name="author" content="">
     <meta name="keywords" content="">
@@ -30,7 +33,7 @@
     <!-- Style -->
     <link href="style.css" media="screen" rel="stylesheet">
 </head>
-<body class="shop-page shop-page-product-details">
+<body>
 <!-- Spinner -->
 <div class="spinner-container">
     <div class="spinner-dot"></div>
@@ -46,36 +49,49 @@
         <nav class="menu">
             <ul>
                 <li class="menu-item-has-children">
-                    <a href="#" class="menu-icon"></a>
-                    <a href="index-2.html">HOME</a>
-                    <ul class="sub-menu">
-                        <li><a href="index-2.html">HOME SLIDER</a></li>
-                        <li><a href="index-3.html">HOME VIDEO</a></li>
-                    </ul>
+                  
+                    <a href="home.php">HOME</a>
+                    
                 </li>
-                <li class="menu-item-has-children active-item">
-                    <a href="#" class="menu-icon"></a>
-                    <a href="shop.html">SHOP</a>
-                    <ul class="sub-menu">
-                        <li><a href="shop.html">TWO COLUMNS</a></li>
-                        <li><a href="shop-2.html">THREE COLUMNS </a></li>
-                    </ul>
-                </li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="blog.html">BLOG</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
                 <li class="menu-item-has-children">
                     <a href="#" class="menu-icon"></a>
-                    <a href="size-guide.html">HELP</a>
+                    <a href="#">Design</a>
                     <ul class="sub-menu">
-                        <li><a href="size-guide.html">SIZE GUIDE</a></li>
-                        <li><a href="returns-exchanges.html">RETURNS - EXCHANGES</a></li>
-                        <li><a href="terms-of-services.html">TERMS OF SERVICES</a></li>
+                        <li><a href="list_designer.php">All Designer</a></li>
+                        <li><a href="shop-2.html">All Design</a></li>
+                    </ul>
+                </li>
+                <li><a href="my_bookings.php">MY BOOKINGS</a></li>
+                <li><a href="about.php">ABOUT</a></li>
+                <li><a href="feedback.php">FEEDBACK</a></li>
+                <li><a href="contact.php">CONTACT</a></li>
+                <li class="menu-item-has-children">
+                    <a href="#" class="menu-icon"></a>
+                    <a href="#">HELP</a>
+                    <ul class="sub-menu">
+                        <li><a href="size-guide.php">SIZE GUIDE</a></li>
+                        <li><a href="returns-exchanges.php">RETURNS - EXCHANGES</a></li>
+                        <li><a href="terms-of-services.php">TERMS OF SERVICES</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
-        <div class="menu-log-in"><a href="login.html">LOG IN</a></div>
+
+        <?php 
+            if(!empty($_SESSION)){
+        ?>
+        <div class="menu-log-in">
+            <form method="POST" action="auth_controller.php">
+                <input style="width:30%; border-radius: 10px;" class="btn btn-danger" type="submit" name="btnLogoutUser" value="Log-out">
+            </form>
+            </div>
+
+            <?php } else { ?>
+                
+        <div class="menu-log-in"><a href="login.php">LOG IN</a></div>
+            <?php } ?>
+
+
     </div>
     <div class="menu-footer">
         <ul class="menu-social">
@@ -103,10 +119,12 @@
             </a>
         </div>
         <div class="logo-wrap">
-            <a href="index-2.html" class="theme-logo">Get-Your-Designer</a>
+            <a href="index-2.html" class="theme-logo">Get-Your_Designer</a>
         </div>
         <div class="header-cart">
+            <a href="#" class="cart-link">
+         </a>
         </div>
     </header>
     <!-- End Header -->
-   
+    
