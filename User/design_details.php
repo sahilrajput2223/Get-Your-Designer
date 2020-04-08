@@ -1,5 +1,6 @@
 <?php
-   if(empty($_SESSION['user'])){
+ session_start();
+ if(empty($_SESSION['user'])){
     header("Location:login.php");
 } 
 
@@ -23,7 +24,7 @@
 
 <!-- Mirrored from html.cubecreationthemes.com/lola/shop-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Mar 2020 14:59:25 GMT -->
 <head>
-    <title>Lola | HTML Themes</title>
+    <title>Get-Your-Designer</title>
     <meta charset="UTF-8">
     <meta name="author" content="">
     <meta name="keywords" content="">

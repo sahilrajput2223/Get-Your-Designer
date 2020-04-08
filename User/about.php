@@ -1,9 +1,10 @@
 <?php 
+
+include_once("header.php");
+
 if(empty($_SESSION['user'])){
     header("Location:login.php");
 } 
-
-    include_once("header.php");
 ?>
 
 
