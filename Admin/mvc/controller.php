@@ -19,7 +19,7 @@ session_start();
 				
 				$passwd = $_POST['passwd'];
 				echo $passwd;
-				
+
 				$_SESSION['designer_user_eamil'] = $email;
 				$_SESSION['designer_user_passwd'] = $passwd;
 				echo "PASSWORD AND CONFIRM PASSWORD MATCH";

@@ -35,7 +35,7 @@
                     <li class="col-sm-5 col-md-5 col-xs-5 product">
                         
                         <a href="design_details.php?a=<?php echo $result['id']?>" class="loop-product-link">
-                            <img style="width:100%; height:400px; border-radius:5px; box-shadow: 10px 10px 15px gray;" src="<?php echo "../Designer/".$imgs[0] ?>" alt="image"/>
+                            <img style="width:100%; height:400px; border-radius:5px; box-shadow: 10px 10px 15px gray;" src="<?php echo "../Designer/images/post/".$imgs[0] ?>" alt="image"/>
                             <img style="width:100%; height:400px; border-radius:5px; box-shadow: 10px 10px 15px gray;" class="image-hover" src="<?php echo "../Designer/images/post/".$imgs[1] ?>" alt="image"/>
                             <h3 style="font-size: 20px; "><?php echo $result['design_name'] ?></h3>
                         </a>

@@ -43,34 +43,37 @@ if ($_SESSION['admin'] != 'Admin')
                                         <thead>
                                             <tr>
                                                 <th>No.</th>
-                                                <th>Name</th>
                                                 <th>Username</th>
                                                 <th>Email</th>
-                                                <th>Status</th>
-                                                <th>Details</th>
-                                                <th>profile</th>
-                                                <th>Delete</th>
+                                                <th>Verified</th>
+                                                <th>Joined On</th>
                                             </tr>
                                         </thead>
                                         <tbody> 
                                     <?php
                                         $d = new DAO(); 
                                         $I = 0;
-                                        $data = $d->select_all("register_designer");
+                                        $data = $d->select_all("user_register");
                                         
                                         while ($result = mysqli_fetch_array($data)) {
 					                        $I++;
 							        ?>
                                     <tr>
                                     <td><?php echo $I; ?></td>
-			                        <td><?php echo $result['name']; ?></td>
 			                        <td><?php echo $result['username']; ?></td>
-                        			<td><?php echo $result['email']; ?></td>
-			                        <td><?php echo "0" ?></td>
-			                        <td><?php echo "Details" ?></td>
-                                    <td><?php echo "profile mail" ?></td>	
-                                    <td><?php echo "delete" ?></td>	
-                                    </tr>
+			                        <td><?php echo $result['email']; ?></td>
+                                    <td>
+                                        <?php 
+                                            if($result['v_flag'] == "1"){
+                                                echo "Yes";
+                                            }
+                                            else{
+                                                echo "No";
+                                            }
+                                        ?>
+                                     </td>
+			                        <td><?php echo $result['created_on']; ?></td>
+			                       </tr>
                                         <?php  } ?>
                                         </tbody>
                                     </table>
