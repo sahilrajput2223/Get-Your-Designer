@@ -13,6 +13,15 @@
 			$this->con = $db->connect();
 		}
 
+		function select_by_condition($table,$where="")
+		{
+			if($where!="")
+			{
+				$where = "where ".$where;
+			}
+			return mysqli_query($this->con , "SELECT * FROM $table $where");
+		}
+		
 		
 		function select_all($table)
 		{

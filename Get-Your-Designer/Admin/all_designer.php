@@ -67,8 +67,13 @@ if ($_SESSION['admin'] != 'Admin')
 			                        <td><?php echo $result['username']; ?></td>
                         			<td><?php echo $result['email']; ?></td>
 			                        <td><?php if($result['profile_flag'] == 0){ echo "No"; } else { echo "Yes";} ?></td>
-			                        <td><?php echo "Details" ?></td>
-                                    <td><form method="POST" action="mvc/profile_mail.php"> 
+			                        <td>
+                                    <form method="POST" action="designer_profile.php"> 
+                                            <input type="hidden" name="email" value="<?php echo $result['email']; ?>">
+                                            <button  class="btn btn-primary" <?php if($result['profile_flag'] == 0){ echo "disabled"; } ?>  style="width:90%; color:white">View Details</button>
+                                    </form>
+                                    </td>
+                                    <td><form method="POST" action="mvc/register_mail.php"> 
                                             <input type="hidden" name="email" value="<?php echo $result['email']; ?>">
                                             <button name="Email" class="btn btn-primary" style="width:90%; color:white">Send Mail</button>
                                         </form>
