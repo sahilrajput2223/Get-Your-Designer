@@ -260,7 +260,7 @@
 
 			$file_path = "../images/post/".$file_name;
 			if(in_array($file_ext,$extensions)=== true){
-				move_uploaded_file($file_tmp,$file_name);
+				move_uploaded_file($file_tmp,$file_path);
 				echo "Success";
 				array_push($files,$file_name);
 			 } 

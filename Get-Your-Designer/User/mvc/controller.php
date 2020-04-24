@@ -108,6 +108,26 @@
 		}
 
 
+		if (isset($_POST['btnDeleteBooking'])) {
+			echo "in delete";
+			
+			$design_id = $_POST['design_id'];
+			$where = "id = $design_id";
+			echo $where;
+			
+			$q = $d->delete_post("booking_design",$where);
+			echo $q;
+			if ($q > 0) {
+				echo "Booking Deleted";
+				header("Location:../my_bookings.php");
+			}
+			else{
+				echo "something is wrong - booking Not Deleted";
+			}
+		
+		}
+
+
 }
 
 ?>

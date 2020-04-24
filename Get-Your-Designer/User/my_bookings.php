@@ -34,6 +34,7 @@
                                                 <th>Size</th>
                                                 <th>Price</th>
                                                 <th>Booking Date</th>
+                                                <th>Delete Booking</th>
                                             </tr>
                                         </thead>
                                         <tbody> 
@@ -54,6 +55,14 @@
                         			<td><?php echo $result['size']; ?></td>
 			                        <td><?php echo "$ ".$result['price']." /-"; ?></td>
 			                        <td><?php echo $result['booking_date'] ?></td>
+                                    <td> 
+                                        <form method="POST" action="mvc/controller.php" style="width: 100%">
+                                            <input type="hidden" name="design_id" value="<?php echo $result['id'] ?>" >
+                                            <button name="btnDeleteBooking" style="width: 100%; border-radius: 5px;"  class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </td>    
+                                    </tr>
+                                        
                                         <?php  } ?>
                                         </tbody>
                                     </table>
