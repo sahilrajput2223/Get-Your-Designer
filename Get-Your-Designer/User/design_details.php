@@ -251,18 +251,19 @@
 
                                 </div>
                                 <br>
-                                <br>
                                 
                                 <p class="button">
                                     <input type="submit" name="btnBookDesign" class="button" value="Book Order"/>
-                                </p>
+                                
+                                
                                 
                                 </form>
-                               
-                           <p class="button">
-                                   
-                                    <a href="mailto:<?php echo $result['designer_email']?>?subject=Query For <?php echo $result['design_name'] ?>">
-                                    <input type="submit" name="btnBookDesign" class="button" value="Contact Designer For Query"/>
+                           
+                                    <a href="mailto:<?php echo $result['designer_email']?>?subject=Feedback For <?php echo $result['design_name'] ?> Design">
+                                    <input type="submit"  class="button" value="Feedback"/>
+                                    </a>
+                                    <a href="mailto:<?php echo $result['designer_email']?>?subject=Query For <?php echo $result['design_name'] ?> Design">
+                                    <input type="submit" class="button" value="Contact Designer For Query"/>
                                     </a>
                                 </p>
                                
