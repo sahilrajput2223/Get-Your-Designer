@@ -9,10 +9,6 @@ Get-Your-Designer website is based on fashion field. In this web-app Admin can a
 
 This app is nearly complete. It is only missing one thing… real data! 
 
-* creating new venues, artists, and creating new shows.
-* searching for venues and artists.
-* learning more about a specific artist or venue.
-
 ### Tech Stack
 
 Our tech stack will include:
