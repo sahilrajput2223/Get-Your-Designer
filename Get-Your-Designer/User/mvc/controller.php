@@ -108,6 +108,101 @@
 		}
 
 
+		if (isset($_POST['btnLikeDesign'])) {
+			$user = $_SESSION['user'];
+			$m->set_data("txtDesignId" , $design_id);
+			$m->set_data("txtUserEmail" , $user);
+	
+
+			$dataArray = array( 'design_id'=>$m->get_data(test_input('txtDesignId')) ,
+						'user_email'=>$m->get_data(test_input('txtUserEmail')) ,
+						);
+				
+				echo $dataArray['design_id'];
+				echo "   ";
+				echo $dataArray['user_email'];
+				
+				$q = $d->insert("user_like_design",$dataArray);
+				echo "  ";
+				echo $q;
+		
+			$design = $m->get_data(test_input('txtDesignId'));
+	
+			$design = $m->get_data(test_input('txtDesignId'));
+			$where = "id = $design";
+			$data = $d->select_by_condition("designer_post", $where);
+			
+			while($result = mysqli_fetch_array($data))
+			{
+				$like_c = $result['like_count'] + 1;
+				echo $like_c;
+				$m->set_data("likeCount",$like_c);
+				$likeArray = array('like_count'=>$m->get_data(test_input('likeCount')));
+				$where = "id = $design";
+				$Q = $d->update("designer_post", $likeArray, $where);
+				echo $Q;
+				
+
+			}
+			
+
+			
+			if ($q > 0 ) {
+				echo "Like Added On Design";
+				$url = "Location: ../design_details.php?a=" . $design;
+				header($url);
+			}
+			else{
+				echo "something is wrong - Feedback Not Added";
+			}
+		
+		}
+
+
+
+
+		if (isset($_POST['btnDisLikeDesign'])) {
+			$user = $_SESSION['user'];
+			$m->set_data("txtDesignId" , $design_id);
+			$m->set_data("txtUserEmail" , $user);
+	
+			$condion = "design_id = " .$m->get_data(test_input('txtDesignId'));
+			$q = $d->delete_post("user_like_design",$condion);
+			echo "  ";
+			echo $q;
+		
+	
+			$design = $m->get_data(test_input('txtDesignId'));
+			$where = "id = $design";
+			$data = $d->select_by_condition("designer_post", $where);
+			
+			while($result = mysqli_fetch_array($data))
+			{
+				$like_c = $result['like_count'] - 1;
+				echo $like_c;
+				$m->set_data("likeCount",$like_c);
+				$likeArray = array('like_count'=>$m->get_data(test_input('likeCount')));
+				$where = "id = $design";
+				$Q = $d->update("designer_post", $likeArray, $where);
+				echo $Q;
+				
+
+			}
+			
+
+			
+			if ($q > 0 ) {
+				echo "Like Deleted On Design";
+				$url = "Location: ../design_details.php?a=" . $design;
+				header($url);
+			}
+			else{
+				echo "something is wrong - Feedback Not Added";
+			}
+		
+		}
+
+
 		if (isset($_POST['btnDeleteBooking'])) {
 			echo "in delete";
 			

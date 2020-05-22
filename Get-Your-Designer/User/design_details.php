@@ -254,11 +254,35 @@
                                 
                                 <p class="button">
                                     <input type="submit" name="btnBookDesign" class="button" value="Book Order"/>
+                                    
                                 
-                                
-                                
-                                </form>
+                                    </form>
                            
+                                    <form method="POST" action="mvc/controller.php">
+                                    
+                                    
+                                    <input type="hidden" name="design_id" value="<?php echo $result['id']?>">
+        
+
+                                    <?php 
+                                          $where = "design_id = " . $result['id'] . " AND user_email = '" . $_SESSION['user'] . "'";
+                                    
+                                          $likeArray = $d->select_by_condition("user_like_design", $where);
+                                        if(mysqli_num_rows($likeArray) >= 1){
+                                            
+                                    ?>
+                                            <input type="submit" name="btnDisLikeDesign" class="button" value="Dislike"/>                                             
+                                          <?php }
+                                        else{
+                                            ?>
+                                            <input type="submit" name="btnLikeDesign" class="button" value="Like"/> 
+                                            <?php
+                                        }
+                                         ?>
+                                </form>
+                                    
+                                
+                                
                                     <a href="mailto:<?php echo $result['designer_email']?>?subject=Feedback For <?php echo $result['design_name'] ?> Design">
                                     <input type="submit"  class="button" value="Feedback"/>
                                     </a>
