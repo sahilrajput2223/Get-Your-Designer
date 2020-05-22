@@ -24,6 +24,7 @@
 
 <!-- Mirrored from html.cubecreationthemes.com/lola/shop-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Mar 2020 14:59:25 GMT -->
 <head>
+
     <title>Get-Your-Designer</title>
     <meta charset="UTF-8">
     <meta name="author" content="">
@@ -205,7 +206,14 @@
                                     <div class="panel-default">
                                         <div id="collapseOne" class="panel-collapse  " role="tabpanel" aria-labelledby="headingOne">
                                             <div class="panel-body">
-                                                <?php echo "<b style='color:black;'>Designed By :</b> ".$result['designer_email'] ?>
+                                             
+                                            <b style='color:black;'>Share On :</b>  <a href="https://www.facebook.com/sharer/sharer.php?u=#url" target="_blank">FACEBOOK</a>
+                                            <br>
+                                            <b style='color:black;'>Share On :</b>  <a href="https://www.linkedin.com/sharing/share-offsite/?url=#url" target="_blank">LINKEDIN</a>
+                                            
+                                            <br>
+                                            <br>
+                                            <?php echo "<b style='color:black;'>Designed By :</b> ".$result['designer_email'] ?>
                                             </div>
                                             <div class="panel-body">
                                                 <br>
