@@ -47,6 +47,7 @@ if($_SESSION['designer'] == null){
                                                 <th>Price</th>
                                                 <th>Category</th>
                                                 <th>Occasion</th>
+                                                <th>Likes</th>
                                                 <th>Uploded Date</th>
                                                 <th>Details</th>
                                                 <th>Delete</th>
@@ -72,6 +73,7 @@ if($_SESSION['designer'] == null){
                         			<td><?php echo $result['price']; ?></td>
 			                        <td><?php echo $result['category'] ?></td>
                                     <td><?php echo $result['occasion'] ?></td>
+                                    <td><?php echo $result['like_count'] . " Likes" ?></td>
                                     <td><?php echo $result['created_on'] ?></td>
                                     <td>
                                         <form method="POST" action="post_details.php"> 
