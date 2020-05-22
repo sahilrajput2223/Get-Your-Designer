@@ -19,12 +19,12 @@ try {
     $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = '***** YOUR EMAIL ID *****';                    // SMTP username
-    $mail->Password   = '***** YOUR EMAIL ID *****';                               // SMTP password
+    $mail->Password   = '***** YOUR EMAIL PASSWORD *****';                               // SMTP password
     $mail->SMTPSecure = 'tls';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
     $mail->Port       = 587;                                    // TCP port to connect to
     
     //Recipients
-    $mail->setFrom('***** YOUR EMAIL PASSWORD *****', 'Account');
+    $mail->setFrom('***** YOUR EMAIL ID *****', 'Account');
     $mail->addAddress($email);     // Add a recipient
     $mail->addReplyTo('no-reply@gmail.com', 'No Reply');
     
