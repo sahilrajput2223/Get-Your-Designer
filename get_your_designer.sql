@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2020 at 09:37 PM
+-- Generation Time: May 22, 2020 at 01:27 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -70,6 +70,7 @@ CREATE TABLE `designer_post` (
   `category` varchar(20) NOT NULL,
   `occasion` varchar(20) NOT NULL,
   `images` varchar(200) NOT NULL,
+  `like_count` int(11) NOT NULL,
   `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -136,6 +137,18 @@ CREATE TABLE `register_designer` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_like_design`
+--
+
+CREATE TABLE `user_like_design` (
+  `id` int(5) NOT NULL,
+  `design_id` int(5) NOT NULL,
+  `user_email` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_register`
 --
 
@@ -192,6 +205,12 @@ ALTER TABLE `register_designer`
   ADD UNIQUE KEY `email` (`email`);
 
 --
+-- Indexes for table `user_like_design`
+--
+ALTER TABLE `user_like_design`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user_register`
 --
 ALTER TABLE `user_register`
@@ -236,6 +255,12 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `register_designer`
 --
 ALTER TABLE `register_designer`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user_like_design`
+--
+ALTER TABLE `user_like_design`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
 
 --
