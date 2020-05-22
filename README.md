@@ -24,7 +24,7 @@ Instructions
 -----
 
 1. Understand the Project Structure and where important files are located.
-2. Make sure you have on this path: Get-Your-Designer\Designer\images\ (in images folder, add post folder if not available)
+2. Make sure you have on this path: Get-Your-Designer\Designer\ (in Designer folder, Create images folder if not available, and in that images folder create post folder)
 3. Make sure you have XAMP installed and start Apache and MySQL services
 4. Add EMail Id and password so email communication is done. 
 	1. Get-Your-Designer\Admin\mvc\profile_mail.php -> line number = 22, 28 (Add Email)
